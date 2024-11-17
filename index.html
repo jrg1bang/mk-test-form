@@ -1,7 +1,799 @@
+<html>
+<head>
+
+	
+</head>
+	<body>
+
+		<style type="text/css">
+			body
+{
+	margin: 0px;
+	padding: 0px;
+	background: #fff;
+	color: #333;
+	font-family: Arial;
+	font-size: 15px;
+	min-width: 270px;
+}
+
+* 
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+h1 
+{
+	font-size: 34px;
+	letter-spacing: -1px;
+	margin-top: 10px;
+}
+
+/*input:focus { font-size: 16px!important}*/
+
+a 
+{
+	text-decoration: none;
+}
+
+      
+      .line {
+    border: none;
+    height: 1px;
+    background: #eee;
+    margin: 10px 0px;
+}
+
+img 
+{
+	border: none;
+}
+
+ul 
+{
+	list-style: none;
+}
+
+input 
+{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+input[type="text"]
+{
+	border: 1px solid #ccc;
+	box-shadow: inset 0px 1px 1px #eee;
+	padding: 5px;
+	font-size: 14px;
+	color: #999;
+}
+
+.inpt input[type="text"]
+{
+	font-size: 16px;
+}
+
+.focused 
+{
+	color: #333333!important;
+}
+
+.left 
+{
+	float: left;
+}
+
+.right 
+{
+	float: right;
+}
+
+.sz12 
+{
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.menu 
+{
+	overflow: hidden;
+}
+
+.menu a 
+{
+	display: block;
+	padding: 10px 20px;
+	font-weight: bold;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.menu .left a 
+{
+	margin-right: 5px;
+	background: #ebebeb;
+	color: #444;
+}
+
+.menu .left a:hover 
+{
+	background: #ddd;
+}
+
+.menu .left a:active 
+{
+	background: #ccc;
+}
+
+.menu .right a
+{
+	margin-left: 5px;
+	white-space: nowrap;
+}
+
+.gray-btn 
+{
+	background: #d9d9d9;
+	color: #555;
+}
+
+.gray-btn:hover
+{
+	background: #ccc;
+}
+
+.gray-btn:active
+{
+	background: #bbb;
+}
+
+.purple-btn 
+{
+	margin: 0px;
+	background: #c31eaa;
+	color: #fff;
+}
+
+.purple-btn img
+{
+	float: left;
+	margin: -1px 5px 0px 0px;
+}
+
+.purple-btn:hover 
+{
+	background: #e52ec9;
+}
+
+.purple-btn:active 
+{
+	background: #92177f;
+}
+
+.load-font
+{
+	font-family: 'Handlee', sans-serif;
+	font-size:3px;
+}
+
+.game, .menu
+{
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+
+	-webkit-tap-highlight-color:transparent;
+}
+
+
+.footer 
+{
+	color: #999;
+	text-align: right;
+}
+
+.footer img 
+{
+	margin: 0px 0px -1px 1px;
+}
+
+.popup-wrap 
+{
+	z-index: 10000;
+	display: none;
+	width: 100%;
+	height: 520px;
+	position: absolute;
+	top: 118px;
+	background: url(/img/popup-wrap-bg.png);
+}
+
+.popup 
+{
+	background: #fff;
+	width: 480px;
+	margin: 50px auto 50px auto;
+}
+
+.popup p 
+{
+	line-height: 20px;
+}
+
+.popup-header, .popup-content, .popup-footer 
+{
+	padding: 15px 30px;
+}
+
+.popup-header 
+{
+	border-bottom: 1px solid #eeeeee;
+	overflow: hidden;
+}
+
+.popup-header h2
+{
+	font-size: 28px;
+	letter-spacing: -1px;
+	float: left;
+}
+
+.popup-header p
+{
+	float: left;
+	font-weight: bold;
+	margin: 9px 0px 0px 10px;
+}
+
+.popup-header a
+{
+	display: block;
+	float: right;
+	font-size: 28px;
+	margin-top: 2px;
+	color: #999;
+}
+
+.popup-header a:hover 
+{
+	color: #555;
+}
+
+.popup-header .close p 
+{
+	display: none;
+}
+
+.popup-content 
+{
+	height: 260px;
+}
+
+.popup-footer 
+{
+	background: #ebebeb;
+	overflow: hidden;
+}
+
+.popup-footer a
+{
+	float: right;
+	display: block;
+	padding: 10px 20px;
+	font-weight: bold;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.popup-footer .gray-btn span 
+{
+	display: block;
+	float: left;
+	font-size: 22px;
+	line-height: 16px;
+	font-weight: normal;
+	margin-right: 3px;
+}
+
+#send-popup ul
+{
+	width: 100%;
+}
+
+#send-popup li
+{
+	float: left;
+	margin-bottom: 5px;
+}
+
+#send-popup li p 
+{
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#send-popup input[type="text"]
+{
+	width: 200px;
+	padding: 7px 5px;
+}
+
+#send-popup input[type="text"].error
+{
+	border-color:#c31eaa;
+}
+
+#send-popup li.left
+{
+	margin-right: 10px;
+}
+
+#send-popup li .city 
+{
+	width: 136px;
+}
+
+#send-popup li .zip 
+{
+	width: 60px;
+}
+
+#send-popup .save-info
+{
+	display: block;
+	float: left;
+}
+
+#send-popup .save-info input[type="checkbox"]
+{
+	margin: 15px 5px 0px 0px;
+	float: left;
+	cursor: pointer;
+}
+
+#send-popup .save-info span 
+{
+	display: inline-block;
+	font-size: 14px;
+	margin-top: 12px;
+	font-weight: normal;
+	cursor: pointer;
+}
+
+#print-popup .right
+{
+	width: 50%;
+	padding: 0px 0px 0px 15px;
+	border-left: 1px solid #eee;
+}
+
+#answers-popup .right
+{
+	width: 100px;
+	padding: 0px 0px 0px 15px;
+	border-left: 1px solid #eee;
+}
+
+#answers-popup .right li
+{
+	margin-top: 5px;
+}
+
+#print-popup ul
+{
+	margin-top:4px;
+}
+#print-popup li
+{
+	padding:3px 0;
+}
+#answers-popup .right li a, #print-popup li a 
+{
+	font-size: 13px;
+	font-weight: bold;
+	color: #c31eaa;
+}
+
+#answers-popup .right li a:hover, #print-popup li a:hover
+{
+	color: #e52ec9;
+}
+
+
+#answers-popup .grid-sml
+{
+	width: 259px;
+	height: 233px;
+}
+
+#answers-popup .grid-sml li 
+{
+	width: 25px;
+	height: 25px;
+}
+
+
+#answers-popup .grid-sml li p
+{
+	font-size: 20px;
+	margin-top: 3px;
+}
+
+#answers-popup .grid-sml li.dark 
+{
+	width: 26px;
+	height: 26px;
+}
+
+#answers-popup .grid-sml .row.last li.dark 
+{
+	border-bottom: 1px solid #383838;
+}
+
+
+/* -------- Pilar & linjer ------- */
+
+.grid .arrow 
+{
+	display: block;
+	position: absolute;
+}
+
+.grid .arrow.down-right 
+{
+	left: 5px;
+	top: 36px;
+	height: 10px;
+	width: 8px;
+	background: url(/img/downright.gif);
+}
+
+.grid .arrow.right-down 
+{
+	left: 36px;
+	top: 5px;
+	height: 8px;
+	width: 10px;
+	background: url(/img/rightdown.gif);
+}
+
+.grid .line 
+{
+	display: block;
+	position: absolute;
+}
+
+.grid .line.line-type1
+{
+	top: 14px;
+	left: 18px;
+	width: 13px;
+	height: 3px;
+	background: url(/img/line1.gif);
+}
+
+.grid .line.line-type2
+{
+	top: 9px;
+	left: 23px;
+	width: 3px;
+	height: 13px;
+	background: url(/img/line2.gif);
+}
+
+.grid .line.line-type3
+{
+	z-index: 10;
+	top: 14px;
+	left: 46px;
+	width: 9px;
+	height: 3px;
+	background: url(/img/line3.gif);
+}
+
+.grid .line.line-type4
+{
+	z-index: 10;
+	top: 36px;
+	left: 23px;
+	width: 3px;
+	height: 9px;
+	background: url(/img/line4.gif);
+}
+
+#answers-popup .grid .line.line-type1
+{
+	top: 2px;
+	left: 6px;
+}
+
+#answers-popup .grid .line.line-type2 
+{
+	top: -4px;
+	left: 11px;
+}
+
+@media screen and (max-width: 560px) {
+	
+	h1 
+	{
+		font-size: 26px;
+	}
+	
+	.game 
+	{
+		padding: 20px 0px;
+	}
+	
+	.game .grid 
+	{
+		width: 269px;
+		height: 242px;
+	}
+
+	.game .grid .number 
+	{
+		font-size: 9px;
+		font-weight: bold;
+		margin: 1px 0px 0px 1px;
+	}
+
+	.game .grid li 
+	{
+		width: 26px;
+		height: 26px;
+	}
+	
+	.game .grid li div.inpt input
+	{
+		font-size:16px;
+	}
+	.game .grid li div.chr, .game .grid li div.inpt
+	{
+		width:26px;
+		height:26px;
+	}
+	
+	.game .grid li.dark, .game .grid li.dark.last  
+	{
+		width: 27px;
+		height: 27px;
+	}
+	
+	.game .grid .row.last li.dark 
+	{
+		height: 30px;
+	}
+	
+	.game .grid li p 
+	{
+		font-size: 20px;
+		margin-top: 1px;
+	}	
+	
+	table 
+	{
+		width: 100%;
+	}
+	
+	.menu .left 
+	{
+		overflow: hidden;
+	}
+	
+	.menu .left a
+	{
+		display: block;
+		margin: 0px;
+		padding: 10px 0px;
+		text-align: center;
+	}
+	
+	.menu .left a#winners-btn 
+	{
+		margin: 0px 5px;
+	}	
+	
+	.menu .left, .menu .right 
+	{
+		float: none;
+	}
+	
+	.menu .right a 
+	{
+		margin: 10px 0px 0px 0px;
+		padding: 10px 0px;
+		width: 100%;
+	}
+	
+	.menu .right a#send-btn span
+	{
+		width: 90px;
+	}
+
+	.menu .right a#send-btn
+	{
+		margin-left: 5px;
+	}
+
+	.menu .right a#save-btn span
+	{
+		width: 75px;
+	}		
+	
+	.menu .right a span
+	{
+		display: block;
+		margin: auto;
+	}	
+	
+	.popup-wrap	
+	{
+		top: 50px;
+		background: none;
+	}
+	
+	.popup 
+	{
+		margin: 0px;
+		width: 100%;
+		min-width: 270px;
+		background: #f2f2f2;
+		height: 435px;
+	}
+	
+	.popup-header, .popup-content, .popup-footer
+	{
+		padding: 15px;
+	}
+	
+	.popup-header 
+	{
+		border: none;
+		padding-bottom: 0px;
+	}
+	
+	.popup-header .close span
+	{
+		font-size: 24px;
+		margin-top: 0px;
+		float: left;
+	}
+	
+	.popup-header .close p 
+	{
+		display: block;
+		font-size: 14px;
+		text-transform: uppercase;
+		margin: 2px 0px 0px 4px;
+	}
+	
+	.popup h2 
+	{
+		font-size: 20px;
+	}
+	
+	.popup-header p 
+	{
+		margin-top: 4px;
+		font-size: 12px;
+	}
+	
+	.popup-content 
+	{
+		padding-top: 10px;
+	}
+	
+	#send-popup li 
+	{
+		margin-bottom: 6px;
+	}
+	
+	#send-popup li, #send-popup li input[type="text"]
+	{
+		width: 100%;
+	}
+
+	#send-popup li .zip 
+	{
+		width: 20%!important;
+	}
+		
+	#send-popup li .city 
+	{
+		width: 78%!important;
+		float: right;
+	}
+
+	#send-popup li p, #send-popup br
+	{
+		display: none;
+	}
+	
+	::-webkit-input-placeholder {
+		color:    #999;
+	}
+	:-moz-placeholder { 
+		color:    #999;
+	}
+	::-moz-placeholder { 
+		color:    #999;
+	}
+	:-ms-input-placeholder {
+		color:    #999;
+	}	
+	
+	.popup-footer 
+	{
+		display: none;
+	}
+	
+	#send-popup .save-info span 
+	{
+		font-size: 11px;
+		margin-top: 13px;
+	}
+	
+	#send-popup .popup-header p 
+	{
+		display: block;
+	}
+
+	#send-popup .send-info 
+	{
+		display: none;
+	}
+	
+	#send-popup .popup-footer 
+	{
+		display: block;
+		padding-top: 0px;
+	}
+	
+	#send-popup .popup-footer .right a 
+	{
+		display: none;
+	}
+
+	#send-popup .popup-footer 
+	{
+		background: none;
+	}
+
+	#send-popup .popup-footer .left, #send-popup .purple-btn
+	{
+		float: none;
+	}
+	
+	#send-popup .purple-btn	span
+	{
+		display: block;
+		width: 95px;
+		margin: auto;
+	}
+	
+	#answers-popup .right
+	{
+		width: 50px;
+		font-size: 11px;
+		padding: 0px 0px 0px 10px;
+		border-left: 1px solid #ddd;
+	}			
+	
+
+
+      
+		</style>
+
+
 <div id="sendPanel">
 						<div class="popup-header">
 							<h2>Skicka in ditt svar</h2>
-							<a href="javascript:;" class="close"><span>×</span><p>Stäng</p></a>
 						</div>
 						<div class="popup-content">
 							<p class="send-info">Fyll i fälten nedan, så vi kan kontakta dig om du vinner.</p><br>
@@ -11,20 +803,20 @@
 								<ul>
 									<li class="left">
 										<p>Förnamn:</p>
-										<input type="text" id="fn" name="fn" placeholder="Förnamn" value="Förnamn">
+										<input type="text" id="fn" name="fn" placeholder="Förnamn">
 									</li>
 									<li>
 										<p>Efternamn:</p>
-										<input type="text" id="en" name="en" placeholder="Efternamn" value="Efternamn">
+										<input type="text" id="en" name="en" placeholder="Efternamn">
 									</li>
 									<li class="left">
 										<p>Adress:</p>
-										<input type="text" id="ga" name="ga" placeholder="Adress" value="Adress">
+										<input type="text" id="ga" name="ga" placeholder="Adress" value="P-Adress">
 									</li>
 									<li>
 										<p>Postnr. &amp; Ort:</p>
-										<input type="text" name="pn" id="pn" placeholder="Postnr" value="Postnr" class="zip">
-										<input type="text" name="ort" id="ort" placeholder="Ort" value="Ort" class="city">
+										<input type="text" name="pn" id="pn" placeholder="Postnr" value="P-Postnr" class="zip">
+
 									</li>
 									<li class="left">
 										<p>E-post:</p>
@@ -37,12 +829,10 @@
 								</ul>
 							</form>
 						</div>
-						<div class="popup-footer">
-							<div class="left">
-								<a id="sendFormBtn" href="javascript:;" class="purple-btn"><span><img src="/img/arrow-right.png">Skicka in</span></a>
-							</div>
-							<div class="right">
-								<a href="javascript:;" class="close gray-btn"><span>×</span> Stäng</a>
-							</div>
-						</div>
+					
 					</div>
+
+
+			</body>
+</html>
+
